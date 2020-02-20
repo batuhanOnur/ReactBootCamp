@@ -1,24 +1,19 @@
-  
-import React, { Component } from "react";
+import React from "react";
 import NavBar from "./NavBar";
 import Form from "./Form";
-import PageContent from './PageContent';
-import { ThemeProvider } from './contexts/ThemeContext';
+import PageContent from "./PageContent";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
-class App extends Component {
-  render() {
-    return (
+export default function App() {
+  return (
     <ThemeProvider>
-      <PageContent>
-        <LanguageProvider>
-           <NavBar />
-           <Form />
-        </LanguageProvider> 
-      </PageContent>
+      <LanguageProvider>
+        <PageContent>
+          <NavBar />
+          <Form />
+        </PageContent>
+      </LanguageProvider>
     </ThemeProvider>
-    );
-  }
+  );
 }
-
-export default App;
